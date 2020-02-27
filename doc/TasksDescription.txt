@@ -26,6 +26,11 @@ felületet, amin mérés közbe nyomon lehet követni a legalapabb funkciókat.
 beadás kézzel vagy importálás fájlból)
 * MARG csatlakoztatva van, szenzor adatok kijelzése
 
+=======FONTOS: A public git repo csak eddig használható! ========================
+Mivel publikációt is célzunk a jövőben mérési adatok és háló architecktúrák valamint
+tanítás futtatások eredményei nem kerülhetnek public repoba publiklás előtt
+=================================================================================
+
 -3: Mérések rögzítése
 Az elkszült szofvare segítségével különböző mérések felvétele, neurálsi hálók
 tanuló adatbázisának felépítése.
