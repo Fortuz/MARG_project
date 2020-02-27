@@ -1,0 +1,6 @@
+Sensor datasheet and API:
+https://www.phidgets.com/?tier=3&prodid=48
+
+Previously published paper:
+https://www.mdpi.com/1424-8220/19/24/5364
+

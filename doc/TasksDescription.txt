@@ -1,0 +1,76 @@
+A projectben elvégzendő feladatok és ütemezésük:
+
+-1: Mérő szoftver összeállítás 3 almodulból:
+--1A: MARG sensor szoftverének integrálása Pythonban
+	A feladathoz használható a gyártó által biztosított API
+	Szükséges linkek a MARG_modul/doc mappában. 
+	A korábban publikált cikk linkje is itt található.
+
+--1B: MoCap szoftver integrálása Pythonban
+	Az eddig elkészült kód a MoCap_module mappában található.
+	Kód átnézése, megértése, kommentelése, refaktorálása.
+
+--1C: Ur robot szofverének integrálása Pythonban
+	Az eddig elkészült kód a UR_module mappában található
+	Kód átnézése, megértése, kommentelése, refaktorálása.
+
+A fenti feladatokról általánosságban elvárás, hogy külön-külön is jó lenne majd 
+később őket használni, ezért a modulos felépítés. Mindegyik legyen használható 
+önmagában is, illetve import parancsal a jelenlegi mérő szoftverbe is.
+
+-2: Mérő szoftver elkészítése
+A mérő szoftevr magába foglalja a fenti három modult plusz igény szerint egy GUI 
+felületet, amin mérés közbe nyomon lehet követni a legalapabb funkciókat.
+* MoCap csatlakoztatva van, definiált test pozíció és orientáció adatai
+* UR csatlakoztatva van, mérési szekvenciához tartozó pálya adatok
+beadás kézzel vagy importálás fájlból)
+* MARG csatlakoztatva van, szenzor adatok kijelzése
+
+-3: Mérések rögzítése
+Az elkszült szofvare segítségével különböző mérések felvétele, neurálsi hálók
+tanuló adatbázisának felépítése.
+
+Elvégzendő mérések:
+* Egyenes vonalú mozgás (periódikus, nem periódikus)
+* Kalibrációs mérések   (a szenzort minden tengelye körül megforgatni)
+* Sík mozgás (négyszög teszt például)
+* Komplex mozgások
+
+===========================DEAD LINE: April 1====================================
+Mivel a robot egész áprilisban egy másik project számára le van foglalva ezzekel a 
+feladatokkal jó lenne Április előtt végezni, hogy a munka ne akadjon meg. Áprilistól
+kezdve pedig lehet koncentrálni a neurális hálók tanítására.
+=================================================================================
+
+-4: Neurális hálók tanítása
+A project végcélját tekintve két lehetséges irányt fogunk vizsgálni.
+* Noise cencalation / Noise reduction = Zaj csökkentés, szűrés. Szenzor jelek 
+minőségének javítása
+* Orientation and Position estimation = Orientáció és Pozíció becslése
+
+A MARG_module/doc/references.txt tartalmazza a korábban elkészült cikket és a cikkhez
+kapcsolt GitHub repositoryt.
+https://github.com/Fortuz/MARG-based-supervised-learning
+
+Innen majd folyamatosan letisztázzuk a nekünk szükséges dolgokat. 
+Itt találhatóak korábbi mérések is, ezeknek a struktúráját érdemes megtartani, mivel
+a beolvasó és feldolgozó részeket is tudjuk akkor hasznosítani. Illetve a korábbi 
+neurális hálokkal lehet majd kezdeni a tanítást, azokat lehet modosítani.
+
+Jó lenne kipróbálni már létező háló struktúrákat és saját struktúrákat is.
+
+A tanításhoz rendelkezésre áll a tenszéken két erősebb számítógép (darabonként 4 
+GForce 2080Ti-al felszerelve), amiket lehet a tanításokhoz használni. 
+Az elérésükön jelenleg is dolgozunk.
+
+Ezt a létrehozott public GitRepositoryt lehet használni a munka elkezdéséhez. 
+Reméljük a félév során elkészül a szerverünk a D411-ben, ekkor az egész project oda
+költözik. A méréseket nem szeretném public repoban tárolni, de ezzel majd akkor
+foglalkozunk, ha esedékes lesz.
+
+Javaslat: Mivel 3 modul van dolgozhat rajta 2-2-2 ember, a csapatok dolgozhatnak együtt
+ezt rugalmasan kezeljük majd.
+
+Jó munkát. Várom a lebontott ütemtervet.
+  
+  
