@@ -68,6 +68,11 @@ Reméljük a félév során elkészül a szerverünk a D411-ben, ekkor az egész
 költözik. A méréseket nem szeretném public repoban tárolni, de ezzel majd akkor
 foglalkozunk, ha esedékes lesz.
 
+====================EXTRA DEAD LINE - Andre Rath - Május vége ========================
+cikket lehet írni a témából egy special issueba, amiben Botzheim János közre működik
+======================================================================================
+
+
 Javaslat: Mivel 3 modul van dolgozhat rajta 2-2-2 ember, a csapatok dolgozhatnak együtt
 ezt rugalmasan kezeljük majd.
 
