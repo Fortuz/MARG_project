@@ -1,0 +1,51 @@
+def myprog():
+	#popup("jelen")
+	socket_open("//GEPIP//",12345)
+	sync()
+	#popup("connected")
+	global valin="0"
+	thread movethread():
+		while True:
+			if str_find(valin,"goto")==0:
+				subval=str_sub(valin,str_find(valin,",")+1)
+				valin="0"
+				coord1=to_num(str_sub(subval,0,str_find(subval,",")))
+				subval=str_sub(subval,str_find(subval,",")+1)
+				coord2=to_num(str_sub(subval,0,str_find(subval,",")))
+				subval=str_sub(subval,str_find(subval,",")+1)
+				coord3=to_num(str_sub(subval,0,str_find(subval,",")))
+				subval=str_sub(subval,str_find(subval,",")+1)
+				coord4=to_num(str_sub(subval,0,str_find(subval,",")))
+				subval=str_sub(subval,str_find(subval,",")+1)
+				coord5=to_num(str_sub(subval,0,str_find(subval,",")))
+				subval=str_sub(subval,str_find(subval,",")+1)
+				coord6=to_num(str_sub(subval,0,str_find(subval,",")))
+				subval=str_sub(subval,str_find(subval,",")+1)
+				coord7=to_num(str_sub(subval,0,str_find(subval,",")))
+				subval=str_sub(subval,str_find(subval,",")+1)
+				coord8=to_num(subval)
+				movel(p[coord1,coord2,coord3,coord4,coord5,coord6],a=coord8/1000,v=coord7/1000)
+				socket_send_string("arrived")
+				sync()
+			elif str_find(valin,"wait")==0:
+				waittime=to_num(str_sub(valin,str_find(valin,",")+1))
+				valin="0"
+				sleep(waittime)
+				socket_send_string("waitover")
+				sync()
+			else:
+				sync()
+			end
+		end
+		return False
+	end
+	t=run movethread()
+	while True:
+		a=socket_read_line()
+		if a != "":
+			#popup(a)
+			valin=a
+		end
+		sync()
+	end
+end
