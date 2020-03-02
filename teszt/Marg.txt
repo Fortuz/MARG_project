@@ -1,7 +1,0 @@
-tesztsor 1
-<<<<<<< HEAD
-tesztsor 2
-tesztsor 3 do not delete
-=======
-
->>>>>>> Marg_connect
