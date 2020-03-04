@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #encoding: utf-8
 #This file is the main python file for UR one line commands
 import numpy as np
@@ -36,3 +37,19 @@ while True:
     print(rtde.get_data())
 
 #'''
+=======
+#This file is the main python file for UR one line commands
+#encoding: utf-8
+
+import numpy as np
+
+from URconnect import URCom
+
+robot= URCom("10.0.0.111",30002)
+robot.conn()
+f= open("./robot.txt","r")
+robotprog=f.read()
+robot.send("movej(p[0.1,-0.5,0.8,0,-1,1])\n")
+
+
+>>>>>>> Stashed changes

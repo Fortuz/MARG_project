@@ -1,0 +1,13 @@
+
+marg:
+
+péntek 13.
+összes szenzor adat kinyerése egszinkorn jelre csvbe/txt mentése timstampel
+emailt irni natabranának delayekrõl
+savetxt nek utnánézni mérjó 
+
+
+
+ur robot:
+péntek 13. 
+robot paraméterezhetõ pálya generáló programját
