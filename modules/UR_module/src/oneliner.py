@@ -38,6 +38,7 @@ while True:
 
 #'''
 =======
+<<<<<<< Updated upstream
 #This file is the main python file for UR one line commands
 #encoding: utf-8
 
@@ -52,4 +53,24 @@ robotprog=f.read()
 robot.send("movej(p[0.1,-0.5,0.8,0,-1,1])\n")
 
 
+=======
+#This file is the main python file for UR one line command
+
+from URconnect import URCom
+
+
+#mat = np.ones((10,10))
+#mat *= 3
+#mat *= 2  #konstans szorzás
+#mat -= np.ones((3,3))
+#mat2 = np.ones((3,3))*10
+
+#mat=mat @ mat2.T # @mátrix szorzás T transzpoonált
+
+#print(mat)
+
+robot = URCom("10.0.0.111",30002)  #ip és port üres socket létrehozása
+robot.conn() #csatlakozás létesítése itt kell robotot remote módba kapcsolni
+robot.send("movej(p[0.2,-0.,0.4,0,-3,1])\n") #parancs küldése és újsor xyz rx ry rz
+>>>>>>> Stashed changes
 >>>>>>> Stashed changes
