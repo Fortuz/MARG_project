@@ -16,20 +16,28 @@ timestamp(type: float):The timestamp value
 from Phidget22.Phidget import *
 from Phidget22.Devices.Spatial import *
 import time
+import numpy as np
+
+
+array = []
 
 def onSpatialData(self, acceleration, angularRate, magneticField, timestamp):
-	print("Acceleration: " + str(acceleration))
-	print("AngularRate: " + str(angularRate))
-	print("MagneticField: " + str(magneticField))
-	print("Timestamp: " + str(timestamp))
+	array.append([timestamp,acceleration[0],acceleration[1], acceleration[2],angularRate[0],angularRate[1],angularRate[2], magneticField[0], magneticField[1], magneticField[2]])
 
 ch = Spatial()
-
 # Register for event before calling open
 ch.setOnSpatialDataHandler(onSpatialData)
-
+print("Waiting for the Phidget TemperatureSensor Object to be attached...")
+ch.openWaitForAttachment(5000)			# időtúllépés 5 s
+ch.setDataInterval(20)					# 20 ms a mintavételezési idő
 ch.open()
 
-while True:
-	# Do work, wait for events, etc.
-	time.sleep(1)
+# enter-ig olvas
+try:
+		input("Press Enter to Stop\n")
+except (Exception, KeyboardInterrupt):
+		pass
+ch.close()
+
+
+np.savetxt('data.csv', array,fmt='%10.6f', delimiter=',', newline='\n', comments='')
